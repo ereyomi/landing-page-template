@@ -72,6 +72,7 @@ body {
     text-decoration: none;
     color: black;
 }
+
 .intro {
     background: url('../images/meditate.jpeg') no-repeat top center;
     background-size: cover;
@@ -183,8 +184,8 @@ body {
         padding: 10px;
         border-radius: 5px;
     }
-    .nav-menu ul li a:hover {
-        background: tomato;
+    .active {
+        border-bottom: 2px solid black;
     }
     .partA {
         padding: 0px;
@@ -198,6 +199,9 @@ body {
 }
 
 @media screen and (min-width: 800px) {
+    .intro {
+        height: 100vh;
+    }
     .form-box form {
         width: 60%;
     }
