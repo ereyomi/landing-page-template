@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+#container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+}
+.my-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    position: fixed;
+    transition: all 0.5s;
+}
+.partA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.partA .erebtn {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    display: block;
+    outline: none;
+}
+.nav-menu {
+    width: 100%;
+    background: white;
+    height: 0px;
+    overflow: hidden;
+    transform: translateY(-30%);
+    transition: all 0.5s;
+}
+.showNav {
+    transform: translateY(0%);
+    animation: showNav 0.5s ease-in-out;
+}
+@keyframes showNav {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.nav-menu ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.nav-menu ul li {
+    padding: 10px 20px;
+}
+.nav-menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+.intro {
+    background: url('../images/meditate.jpeg') no-repeat center center;
+    background-size: cover;
+    padding: 200px 40px 100px 40px;
+}
+.intro-sm-box h2,
+.intro-sm-box p {
+    color: white;
+}
+
+
+
+
+
+.team {
+    display: grid;
+    grid-template-columns: 100%;
+}
+.team h1 {
+    padding: 30px 0px;
+    text-align: center;
+}
+.team-box {
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+}    
+.card-cover {
+    width: 100%;
+}
+.card-cover img {
+    width: 100%;
+}
+.team-card h2 {
+    font-size: 2rem;
+    margin: 5px 0px;
+}
