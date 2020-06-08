@@ -22,6 +22,7 @@ body {
     display: grid;
     grid-template-columns: 100%;
     position: fixed;
+    position: -webkit-fixed;
     transition: all 0.5s;
 }
 .partA {
@@ -185,7 +186,7 @@ body {
         border-radius: 5px;
     }
     .active {
-        border-bottom: 2px solid black;
+        background: tomato;
     }
     .partA {
         padding: 0px;
