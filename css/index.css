@@ -1,10 +1,16 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
-body{
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+body {
     width: 100%;
     height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #container {
     width: 100%;
@@ -32,7 +38,6 @@ body{
     outline: none;
 }
 .nav-menu {
-    width: 100%;
     background: white;
     height: 0px;
     overflow: hidden;
@@ -61,14 +66,14 @@ body{
     flex-direction: column;
 }
 .nav-menu ul li {
-    padding: 10px 20px;
+    padding: 15px 20px;
 }
 .nav-menu ul li a {
     text-decoration: none;
     color: black;
 }
 .intro {
-    background: url('../images/meditate.jpeg') no-repeat center center;
+    background: url('../images/meditate.jpeg') no-repeat top center;
     background-size: cover;
     padding: 200px 40px 100px 40px;
 }
@@ -116,7 +121,7 @@ body{
 
 /* styling css form */
 
-form{
+.form-box form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -157,6 +162,43 @@ form{
 }
 
 @media screen and (min-width: 600px) {
-    
+    .my-header {
+        grid-template-columns: 50% 50%;
+        transition: all 0.5s;
+        padding: 10px 20px;
+    }
+    .nav-menu {
+        height: initial;
+        background: none;
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    .nav-menu ul {
+        flex-direction: row;
+    }
+    .nav-menu ul li {
+        padding: 10px;
+    }
+    .nav-menu ul li a {
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .nav-menu ul li a:hover {
+        background: tomato;
+    }
+    .partA {
+        padding: 0px;
+    }
+    .partA .erebtn {
+        display: none;
+    }
+    .team-box {
+        grid-template-columns: 40% 40%;
+    }
 }
 
+@media screen and (min-width: 800px) {
+    .form-box form {
+        width: 60%;
+    }
+}
