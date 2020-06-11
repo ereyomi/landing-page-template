@@ -1,7 +1,10 @@
+@import 'card.css';
 html {
   scroll-behavior: smooth;
 }
-* {
+*, 
+*::before, 
+*::after {
   margin: 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -16,6 +19,8 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
+    grid-template-rows: auto;
+    overflow: hidden;
 }
 .my-header {
     width: 100%;
@@ -23,7 +28,10 @@ body {
     grid-template-columns: 100%;
     position: fixed;
     position: -webkit-fixed;
+    top: 0;
+    z-index: 99;
     transition: all 0.5s;
+    overflow: hidden;
 }
 .partA {
     display: flex;
@@ -41,7 +49,6 @@ body {
 .nav-menu {
     background: white;
     height: 0px;
-    overflow: hidden;
     transform: translateY(-30%);
     transition: all 0.5s;
 }
@@ -71,17 +78,35 @@ body {
 }
 .nav-menu ul li a {
     text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
     color: black;
+    cursor: pointer;
+}
+.active {
+    background: tomato;
 }
 
 .intro {
     background: url('../images/meditate.jpeg') no-repeat top center;
     background-size: cover;
     padding: 200px 40px 100px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.intro-sm-box h2,
+.intro-sm-box {
+    padding: 20px;
+}
+.intro-sm-box h1,
 .intro-sm-box p {
     color: white;
+}
+.intro-sm-box h1 {
+    font-size: 3rem;
+}
+.intro-sm-box p {
+    font-size: 1rem;
 }
 /* section */
 .section {
@@ -90,35 +115,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 0px;
+    justify-self: center;
+    padding: 50px 20px;
 }
-/* team */
 
-.team h2 {
-    padding: 10px 0px;
+.section h2 {
+    margin: 10px 0px;
 }
-.team-box {
-    display: grid;
-    grid-template-columns: 90%;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-.team-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0px;
-}    
-.card-cover {
-    width: 100%;
-}
-.card-cover img {
-    width: 100%;
-}
-.team-card h2 {
-    font-size: 2rem;
-    margin: 5px 0px;
+.section p {
+    margin: 10px 0px;
+    text-align: center;
 }
 
 /* styling css form */
@@ -160,12 +166,12 @@ body {
 
 /* footer */
 .footer p {
-    text-align: center    
+    text-align: center;    
 }
 
 @media screen and (min-width: 600px) {
     .my-header {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 30% 70%;
         transition: all 0.5s;
         padding: 10px 20px;
     }
@@ -181,27 +187,29 @@ body {
     .nav-menu ul li {
         padding: 10px;
     }
-    .nav-menu ul li a {
-        padding: 10px;
-        border-radius: 5px;
-    }
-    .active {
-        background: tomato;
-    }
     .partA {
         padding: 0px;
     }
     .partA .erebtn {
         display: none;
     }
-    .team-box {
-        grid-template-columns: 40% 40%;
+    .about {
+        padding: 90px;
+    }
+    .intro-sm-box h1 {
+    font-size: 3rem;
+    }
+    .intro-sm-box p {
+        font-size: 1rem;
     }
 }
 
 @media screen and (min-width: 800px) {
     .intro {
         height: 100vh;
+    }
+    .section {
+        padding: 100px;
     }
     .form-box form {
         width: 60%;
